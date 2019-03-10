@@ -35,7 +35,6 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - bytestring
     - zeromq4-haskell
     - zmq-hello
   hello-client:

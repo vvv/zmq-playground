@@ -22,8 +22,8 @@ main = runZMQ $ do
     requester <- socket Req
     connect requester "tcp://localhost:5555"
 
-    for_ [(1 :: Int)..10] $ \i -> do
-        liftIO . putStrLn $ "Sending Hello " ++ show i ++ "…"
+    for_ [(1 :: Int)..8] $ \i -> do
+        liftIO . putStrLn $ "Sending Hello " ++ show i ++ "..."
         send requester [] "Hello"
         _ <- receive requester
         liftIO . putStrLn $ "Received World " ++ show i
