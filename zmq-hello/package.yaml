@@ -27,15 +27,25 @@ library:
   source-dirs: src
 
 executables:
-  zmq-hello-exe:
+  hello-server:
     main:                Main.hs
-    source-dirs:         app
+    source-dirs:         server
     ghc-options:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
     - bytestring
+    - zeromq4-haskell
+    - zmq-hello
+  hello-client:
+    main:                Main.hs
+    source-dirs:         client
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
     - zeromq4-haskell
     - zmq-hello
 

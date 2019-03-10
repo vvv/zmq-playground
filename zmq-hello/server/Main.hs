@@ -1,5 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+-- | Hello World server.
+
 module Main where
 
 import           Control.Concurrent (threadDelay)
