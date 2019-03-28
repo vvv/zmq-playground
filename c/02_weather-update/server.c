@@ -2,7 +2,7 @@
 
 #include <zmq.h>
 #include <assert.h>
-#include <stdlib.h>  // srandom
+#include <stdlib.h>  // arc4random_uniform
 #include <time.h>
 #include <stdio.h>
 
@@ -15,9 +15,9 @@ static void get_weather(char *buf, size_t bufsize)
 
 	assert(buf != NULL && bufsize > 0);
 
-	zipcode = random() % 100000;
-	temperature = random() % 215 - 80;
-	relhumidity = random() % 50 + 10;
+	zipcode = arc4random_uniform(100000);
+	temperature = arc4random_uniform(215) - 80;
+	relhumidity = arc4random_uniform(50) + 10;
 
 	rc = snprintf(buf, bufsize, "%05d %d %d",
 		      zipcode, temperature, relhumidity);
